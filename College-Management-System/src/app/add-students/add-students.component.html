@@ -1,0 +1,336 @@
+<!--<body>
+    <div class="container">
+    <h1>Register Here.....!</h1>
+-->
+<!-- <body>
+    <div class="content">
+        <h1>Register Here.....!</h1>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <table class="form-group">
+                <tr>
+                    <td>
+                      <label for="firstname" class="form-label">First Name:</label>
+                    </td>
+                     <td>
+                        <input type="text" class="form-control"  name="firstname" id="firstname" formControlName="firstname">
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['firstname'].errors?.['required'] && registrationForm.controls['firstname'].touched">FirstName is required</div>
+                    </td>
+                </tr>
+    
+                <tr>
+                     <td>
+                         <label for="lastName" class="form-label">Last Name:</label>
+                     </td>
+                    <td>
+                         <input type="text" class="form-control"  name="lastname" id="lastname" formControlName="lastname">
+                         <div class="form-text text-danger" *ngIf="registrationForm.controls['lastname'].errors?.['required'] && registrationForm.controls['lastname'].touched">LastName is required</div>
+                        
+                        </td>
+                </tr>
+
+                
+                <tr>
+                    <td>
+                        <label for="age" class="form-label">Age:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control"  name="age" formControlName="age">
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['age'].errors?.['required'] && registrationForm.controls['age'].touched">Age is required</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="email" class="form-label">Email:</label>
+                    </td>
+                    <td>
+                        <input type="email" class="form-control"  name="email" formControlName="email" id="email" required>
+
+                            <div class="form-text text-danger" *ngIf="registrationForm.controls['email'].errors?.['required'] && registrationForm.controls['email'].touched">Email is required</div>
+                            <div class="form-text text-danger" *ngIf="registrationForm.controls['email'].errors?.['email']">Email is invalid</div>
+                    
+
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="password" class="form-label">Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" class="form-control"  name="password">
+
+                        <div  class="form-text text-danger" *ngIf="registrationForm.controls['password'].errors?.['required'] && registrationForm.controls['password'].touched">password is required</div>
+                        <div  class="form-text text-danger" *ngIf="registrationForm.controls['password'].errors?.['minlength']">Password should contain 6 numbers or characters</div>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <label for="DOB" class="form-label">DOB:</label>
+                    </td>
+                    <td>
+                        <input type="date" class="form-control"  name="DOB" formControlName="DOB">
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['DOB'].errors?.['required'] && registrationForm.controls['DOB'].touched">DOB is required</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 
+                        <label for="gender" class="form-label">Gender:</label>
+                    </td>
+                    <td>
+                        <select name="gender" formControlName="gender">
+                        <option>Select Gender</option>
+                        <option  name="gender" class="form-control"  formControlName="gender">
+                        Male</option>
+                        <option  name="gender" class="form-control" formControlName="gender" >
+                        Female</option>
+                        <option  name="gender" class="form-control" formControlName="gender">
+                        Others</option>
+                        </select>
+
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['gender'].errors?.['required'] ">Select gender</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="mobile" class="form-label">Mobile:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control"  name="mobile" formControlName="mobile">
+
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['mobile'].errors?.['required'] && registrationForm.controls['mobile'].touched">Mobile Number is required</div>
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['mobile'].errors?.['pattern']">Mobile Number is invalid</div>
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['mobile'].errors?.['minlength'] ">Mobile number is too short</div>
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['mobile'].errors?.['maxlength'] ">Mobile number is too long</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="course" class="form-lable">Course:</label>
+                    </td>
+                    <td>
+                        <select name="course"  formControlName="course">
+                         <option>Select Your Course</option>
+                         <option  name="course" class="form-control"   >
+                            B.Tech-Aeronautical Engineering</option>
+                         <option  name="course" class="form-control"  >
+                            B.Tech-Autpmobile Engineering</option>
+                         <option  name="course" class="form-control"   >
+                            B.Tech-Biotechnology</option>
+                        <option  name="course" class="form-control"  >
+                            B.Tech-Civil Engineering</option>   
+                        <option  name="course" class="form-control"   >
+                            B.Tech-Computer Science and Engineering</option> 
+                        <option  name="course" class="form-control"  >
+                            B.Tech-Electrical and Communication Engineering</option>
+                        <option  name="course" class="form-control"  >
+                            B.Tech-Electrical and  Electonics Engineering </option>
+                        <option  name="course" class="form-control"   >
+                            B.Tech-Mechanical Engineering</option>
+                    </select>
+                    <div class="form-text text-danger" *ngIf="registrationForm.controls['course'].errors?.['required'] ">Select course</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="motherName" class="form-label">MotherName:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control"  name="motherName" formControlName="motherName">
+
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['motherName'].errors?.['required'] && registrationForm.controls['motherName'].touched ">Mother Name is required</div>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <label for="fatherName" class="form-label">FatherName:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control"  name="FatherName" formControlName="fatherName">
+
+                        <div class="form-text text-danger" *ngIf="registrationForm.controls['fatherName'].errors?.['required'] && registrationForm.controls['fatherName'].touched ">Father Name is required</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Address:</label>
+                    </td>
+                    <td>
+                        <textarea class="form-control" [(ngModel)]="stud.address" name="Address">
+                            </textarea>
+                    </td>
+                </tr>
+    
+
+                <tr>
+                    <button class="btn btn-success" type="submit" >Submit</button>
+                </tr>
+    
+            </table>
+        </form>
+    </div>
+</body> -->
+
+
+<!--<body>
+    <div class="container">
+    <h1>Register Here.....!</h1>
+-->
+<body>
+    <div class="content">
+        <h1>Register Here.....!</h1>
+        <form (ngSubmit)="onSubmit()" >
+            <table class="form-group">
+                <tr>
+                    <td>
+                      <label>First Name:</label>
+                    </td>
+                     <td>
+                        <input type="text" class="form-control" [(ngModel)]="stud.firstName" name="firstname">
+                    </td>
+                </tr>
+    
+                <tr>
+                     <td>
+                         <label>Last Name:</label>
+                     </td>
+                    <td>
+                         <input type="text" class="form-control" [(ngModel)]="stud.lastName" name="lastname">
+                    </td>
+                </tr>
+
+                
+                <tr>
+                    <td>
+                        <label>Age:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="stud.age" name="age">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Email:</label>
+                    </td>
+                    <td>
+                        <input type="email" class="form-control" [(ngModel)]="stud.email" name="email">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" class="form-control" [(ngModel)]="stud.password" name="password">
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <label>DOB:</label>
+                    </td>
+                    <td>
+                        <input type="date" class="form-control" [(ngModel)]="stud.dob" name="Date_of_birth">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <select name="Gender" [(ngModel)]="stud.gender">
+                        <option>Select Gender</option>
+                        <option  name="gender" class="form-control"  >
+                        Male</option>
+                        <option  name="gender" class="form-control" >
+                        Female</option>
+                        <option  name="gender" class="form-control" >
+                        Others</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Mobile:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="stud.mobile" name="Mobile">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Course:</label>
+                    </td>
+                    <td>
+                        <select name="course" [(ngModel)]="stud.course">
+                         <option>Select Your Course</option>
+                         <option  name="course" class="form-control"   >
+                            B.Tech-Aeronautical Engineering</option>
+                         <option  name="course" class="form-control"  >
+                            B.Tech-Autpmobile Engineering</option>
+                         <option  name="course" class="form-control"  >
+                            B.Tech-Biotechnology</option>
+                        <option  name="course" class="form-control"   >
+                            B.Tech-Civil Engineering</option>   
+                        <option  name="course" class="form-control"  >
+                            B.Tech-Computer Science and Engineering</option> 
+                        <option  name="course" class="form-control"  >
+                            B.Tech-Electrical and Communication Engineering</option>
+                        <option  name="course" class="form-control"  >
+                            B.Tech-Electrical and  Electonics Engineering </option>
+                        <option  name="course" class="form-control"  >
+                            B.Tech-Mechanical Engineering</option>
+                    </select>
+                        
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>MotherName:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="stud.motherName" name="MotherName">
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <label>FatherName:</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="stud.fatherName" name="FatherName">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Address:</label>
+                    </td>
+                    <td>
+                        <textarea class="form-control" [(ngModel)]="stud.address" name="Address">
+                            </textarea>
+                    </td>
+                </tr>
+    
+
+                <tr>
+                    <button class="btn btn-success" type="submit" >Submit</button>
+                </tr>
+    
+            </table>
+        </form>
+    </div>
+</body>
+

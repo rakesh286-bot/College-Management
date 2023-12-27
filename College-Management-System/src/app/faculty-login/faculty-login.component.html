@@ -1,0 +1,59 @@
+<html>
+    
+<body>
+    <div class="content">
+
+    <form (ngSubmit)=" facualtylogin()">
+        <div>
+     <table class="container">
+        <tr>
+            <td>
+                <img src="../../assets/img/facultyloginimg1.jpg">
+            </td>
+        </tr>
+
+    <tr>
+    <td>
+    <label for="un">UserEmail : </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <input type="text" id="un" name="un" placeholder="UserName" required [(ngModel)]="email" /><br>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <label for="pw">PassWord  : </label>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <input [type]="changetype?'password':'text'"  id="pw" name="pw" placeholder="PassWord" required [(ngModel)]="password" />
+    <span class="eyeicon" (click)="viewpassword()"><mat-icon>visibility</mat-icon></span>
+    <br>
+    </td>
+    </tr>
+
+    
+    <tr>
+        <td >
+            <small><a routerLink="/facultyforgotpassword">Forget Password</a></small>
+        </td>
+        </tr>
+
+
+    <tr>
+    <td>
+    <button type="submit" class="btn btn-primary" value="Login">Login</button>
+    </td>
+    </tr>
+    </table>
+    </div>
+    </form>
+    </div>
+
+    
+
+    </body>
+    </html>
